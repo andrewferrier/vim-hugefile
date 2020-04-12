@@ -27,6 +27,8 @@ function! s:save_options()
         \ 'eventignore': &eventignore,
         \ 'foldmethod':  &l:foldmethod,
         \ 'swapfile':    &l:swapfile,
+        \ 'hlsearch':    &l:hlsearch,
+        \ 'incsearch':   &l:incsearch,
         \ }
 endfunction
 
@@ -35,6 +37,8 @@ function! s:restore_options()
   let &eventignore  = b:hugefile_saved_settings.eventignore
   let &l:foldmethod = b:hugefile_saved_settings.foldmethod
   let &l:swapfile   = b:hugefile_saved_settings.swapfile
+  let &l:hlsearch   = b:hugefile_saved_settings.hlsearch
+  let &l:incsearch  = b:hugefile_saved_settings.incsearch
 
   if exists(':DoMatchParen') == 2
     DoMatchParen
@@ -52,6 +56,8 @@ function! s:set_options()
   set      eventignore=FileType
   setlocal foldmethod=manual
   setlocal noswapfile
+  set      noincsearch
+  set      nohlsearch
 
   if exists(':NoMatchParen') == 2
     NoMatchParen
