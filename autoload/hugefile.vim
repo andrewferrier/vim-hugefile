@@ -28,7 +28,7 @@ function! s:save_options()
         \ 'foldmethod':  &l:foldmethod,
         \ 'swapfile':    &l:swapfile,
         \ 'hlsearch':    &l:hlsearch,
-        \ 'incsearch':   &l:incsearch,
+        \ 'incsearch':   &l:incsearch
         \ }
 endfunction
 
